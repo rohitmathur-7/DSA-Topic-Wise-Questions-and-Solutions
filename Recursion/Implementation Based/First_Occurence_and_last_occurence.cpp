@@ -28,9 +28,22 @@ int last_occ(int *arr,int key,int n){
 }
 
 void all_occ(int *arr,int i,int n,int key){
+    // base case
     if(i==n) return;
+    //recursive case
     if(arr[i]==key) cout<<i<<",";
     all_occ(arr,i+1,n,key);
+}
+
+int store_occ(int *arr,int n,int key,int *output,int i,int j){
+    //base case
+    if(i==n) return j;
+    //recursive case
+    if(arr[i]==key){
+        output[j]=i;
+        return store_occ(arr,n,key,output,i+1,j+1);
+    }
+    return store_occ(arr,n,key,output,i+1,j);
 }
 
 int main(){
@@ -40,4 +53,9 @@ int main(){
     cout<<first_occ(arr,key,n)<<endl;
     cout<<last_occ(arr,key,n)<<endl;
     all_occ(arr,0,n,key);
+    cout<<endl;
+    //store occ
+    int output[100];
+    int cnt=store_occ(arr,n,key,output,0,0);
+    for(int i=0;i<cnt;i++) cout<<output[i]<<" ";
 }
