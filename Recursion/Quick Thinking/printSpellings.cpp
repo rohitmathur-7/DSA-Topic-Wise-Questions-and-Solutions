@@ -6,7 +6,7 @@ string num[10]={"zero","one","two","three","four","five","six","seven","eight","
 
 //using stringstream
 
-// void printSpellings(int n){
+// void printSpellings(i    nt n){
 //     stringstream ss;
 //     ss<<n;
 //     string s;
