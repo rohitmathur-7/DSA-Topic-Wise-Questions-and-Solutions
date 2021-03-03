@@ -1,2 +1,2 @@
-# LeetCode-Questions AND Problems for Practice
+# This repository will contain topicwise questions on Data Structures and Algorithms.
 
