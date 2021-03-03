@@ -1,3 +1,5 @@
+//input a number ex: 2048 output: two zero four eight
+
 #include<bits/stdc++.h>
 using namespace std;
 string num[10]={"zero","one","two","three","four","five","six","seven","eight","nine"};
