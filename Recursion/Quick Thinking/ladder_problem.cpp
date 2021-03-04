@@ -1,3 +1,5 @@
+// QUES: Given a number n, find the number of ways in which you can reach n, when you can take a jump of either 1,2 or 3.
+
 #include<bits/stdc++.h>
 using namespace std;
 
