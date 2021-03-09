@@ -1,3 +1,9 @@
+//QUES:  Generate balanced brackets using N pairs of Round Brackets.
+//ex: N=2, 
+    //   Balanced brackets -
+    //   ()()
+    //   (())
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -10,6 +16,8 @@ void generate_brackets(int n,char *out,int opening,int closing,int i){
         return;
     }
     //rec case
+    //We have 2 choices
+
     if(opening < n){
         //for opening brackets]
         out[i]='(';
