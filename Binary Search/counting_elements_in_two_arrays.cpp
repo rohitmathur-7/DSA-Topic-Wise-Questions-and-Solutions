@@ -1,3 +1,5 @@
+//QUES: https://practice.geeksforgeeks.org/problems/counting-elements-in-two-arrays/1/?category[]=Binary%20Search&category[]=Binary%20Search&page=1&query=category[]Binary%20Searchpage1category[]Binary%20Search
+
 #include<bits/stdc++.h>
 using namespace std;
 
