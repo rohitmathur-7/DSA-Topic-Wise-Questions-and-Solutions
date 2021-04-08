@@ -5,6 +5,8 @@
 #define f(i,a,b) for(int i=a;i<b;i++)
 using namespace std;
 
+//WHEN ONLY POSITIVE ELEMENTS ARE PRESENT
+
 void countingSort(int *arr,int n){
     int k=INT_MIN;
     //finding k, k=max element in array
@@ -48,11 +50,50 @@ void countingSort(int *arr,int n){
     }
 }
 
+
+//WHEN -VE ELEMENTS ARE ALSO PRESENT
+
+//When -ve elements are present in our array, the above approach won't work because we cannot have -ve indexes, so to solve this problem...we will find the min element and store count of that min element at zero index.
+
+void countingSort_negative_also(int *arr,int n){
+    int mn=*(min_element(arr,arr+n));
+    int mx=*(max_element(arr,arr+n));
+    int range=mx-mn+1;
+    int count[range];
+    memset(count,0,sizeof(count));
+    f(i,0,n){
+        count[arr[i]-mn]++;
+    }
+    f(i,1,range){
+        count[i]+=count[i-1];
+    }
+    int b[n];
+
+    for(int i=n-1;i>=0;i--){
+        b[--count[arr[i]-mn]]=arr[i];
+    }
+    f(i,0,n){
+        arr[i]=b[i];
+    }
+}
+
+
+
 int main(){
     int n;
     cin>>n;
     int arr[n];
     f(i,0,n) cin>>arr[i];
-    countingSort(arr,n);
-    f(i,0,n) cout<<arr[i]<<" ";
+
+    //for only positive numbers
+    // countingSort(arr,n);
+    // f(i,0,n) cout<<arr[i]<<" ";
+
+    // cout<<endl;
+
+    //for both +ve and -ve numbers
+    // countingSort_negative_also(arr,n);
+    // f(i,0,n) cout<<arr[i]<<" ";
+
+    return 0;
 }
