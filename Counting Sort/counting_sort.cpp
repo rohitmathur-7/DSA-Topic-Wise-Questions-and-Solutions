@@ -1,3 +1,6 @@
+//Time Complexity - O(n+k)
+//Auxilary Space - O(n+k)
+
 #include<bits/stdc++.h>
 #define f(i,a,b) for(int i=a;i<b;i++)
 using namespace std;
@@ -10,7 +13,7 @@ void countingSort(int *arr,int n){
     }
     
     //making a count array in which we will store the frequency of the elements
-    int count[n+1];
+    int count[k+1];
     //initializing the all the elements of count as zero
     memset(count,0,sizeof(count));
 
@@ -29,7 +32,7 @@ void countingSort(int *arr,int n){
                             //              index 0 1 2 3 4
                             //              value 0 2 4 5 6
     //So now we know that, before 1 there are zero elements, before 2 there are 2 elements and so on..
-    f(i,1,n){
+    f(i,1,k+1){
         count[i]+=count[i-1];
     }
 
