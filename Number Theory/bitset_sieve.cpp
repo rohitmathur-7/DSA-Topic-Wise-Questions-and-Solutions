@@ -17,17 +17,6 @@ using namespace std;
 bitset<10000000> b;
 vector<int> primes;
 
-bool isPrime(long long int n){
-	if(n<=10000000){
-		return b[n]==1?true:false;
-	}	
-	for(long long int i=0;primes[i]*(long long int)primes[i]<=n;i++){
-		if(n%primes[i]==0) return false;
-	}
-	return true;
-}
-
-
 void sieve(){
 	b[0]=b[1]=1;
 	b.set(); //sets all the bits as 1	
@@ -45,7 +34,5 @@ int main(){
 	sieve();	
 	long long int n;
 	cin>>n;
-	if(isPrime(n)) cout<<"It is prime!"<<endl;
-	else cout<<"Not prime!"<<endl;
-	//for(int i=0;i<=100;i++) cout<<primes[i]<<" ";  //First 100 primes
+	for(int i=0;i<=100;i++) cout<<primes[i]<<" ";  //First 100 primes
 }
