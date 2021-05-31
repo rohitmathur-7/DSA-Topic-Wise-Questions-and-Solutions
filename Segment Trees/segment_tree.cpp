@@ -1,3 +1,8 @@
+/*
+    Ques:
+    Given an array, print the minimum element in the range l-r.
+*/
+
 #include<bits/stdc++.h>
 #define ll long long int
 #define w(t) ll t;cin>>t;while(t--)
