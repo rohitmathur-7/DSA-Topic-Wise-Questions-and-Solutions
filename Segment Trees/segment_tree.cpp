@@ -31,14 +31,43 @@ void buildTree(int *a,int *tree,int s,int e,int index){
     return;
 }              
 
+int query(int *tree,int ss,int se,int qs,int qe,int index){
+
+    //complete overlap
+    if(ss>=qs && se<=qe){
+        return tree[index];
+    }
+
+    //no overlap
+    if(qs>se || qe<ss){
+        return INT_MAX;
+    }
+
+    //partial overlap
+    int mid=(ss+se)/2;
+    int left = query(tree,ss,mid,qs,qe,2*index);
+    int right = query(tree,mid+1,se,qs,qe,2*index+1);
+
+    return min(left,right);
+}
+
 int main(){
     int a[]={1,3,2,-5,6,4};
     int n=sizeof(a)/sizeof(int);
 
     int *tree=new int[4*n+1];
     buildTree(a,tree,0,n-1,1); 
-    f(i,1,14){
-        cout<<tree[i]<<" ";
+    // f(i,1,14){
+    //     cout<<tree[i]<<" ";
+    // }
+
+    int q;
+    cin>>q;
+    while(q--){
+        int l,r;
+        cin>>l>>r;
+        cout<<query(tree,0,n-1,l,r,1)<<endl;
     }
+    
     return 0;
 }
