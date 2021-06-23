@@ -53,6 +53,7 @@
 #define mod 1000000007
 using namespace std;
 ll arr[100000000]={0};
+ll sum[100000000]={0};
                    
 //to compute a^b
 ll fast_modulo_exponentation(ll a,ll b){
@@ -67,6 +68,7 @@ ll fast_modulo_exponentation(ll a,ll b){
     return ans;
 }
 
+//METHOD 1
 void prime_factors_optimized_approach(ll n){
     ll count;
     map<ll,ll> m;
@@ -103,17 +105,36 @@ void prime_factors_optimized_approach(ll n){
     arr[nn]=diff;
 
 }
+
+//METHOD 2
+/*
+    In this we are just adding number to the sum if it is divisible by 2 else we are subtracting it.
+    This we will generate sum array for all the numbers. And just print sum[n] as our answer.
+*/
+// void sieve_approach(){
+//     for(ll i=1;i<100001;i++){
+//         for(ll j=i;j<100001;j+=i){
+//             if(i%2==0) sum[j]+=i;
+//             else sum[j]-=i;
+//         }
+//     }
+// }
  
 int main(){
+    //FOR METHOD 1
     arr[1]=-1;
     f(i,2,100001){
         prime_factors_optimized_approach(i);
     }
 
+    //FOR METHOD 2
+    // sieve_approach();
+
     w(q){
         ll n;
         cin>>n;
-        cout<<arr[n]<<endl;
+        cout<<arr[n]<<endl; //for method 1
+        // cout<<sum[n]<<endl; //for method 2
     }
      
     return 0;
