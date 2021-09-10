@@ -133,8 +133,8 @@ int main(){
         cin>>arr[i];
     }
 
-    cout<<max_sub_array_sum(n,arr)<<endl;
-
+    // cout<<max_sub_array_sum(n,arr)<<endl;
+    // cout<<max_sub_array_sum_space_opt(n,arr)<<endl;
 
     return 0;
 }
