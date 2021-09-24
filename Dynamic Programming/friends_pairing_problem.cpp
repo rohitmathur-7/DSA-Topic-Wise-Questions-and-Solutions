@@ -1,3 +1,7 @@
+/*
+    Problem - https://practice.geeksforgeeks.org/problems/friends-pairing-problem5425/1#
+*/
+
 #include<bits/stdc++.h>
 #define ll long long int
 #define fast ios_base::sync_with_stdio(false);cin.tie(NULL);
@@ -39,9 +43,9 @@ ll binomialCoeff(ll n, ll k)
 
 */
 
-ll friends_pairing_topDown(ll n){
+ll friends_pairing_topDown(ll n,ll dp[]){
     //base case
-    if(n==0 || n==1) return 1;
+    if(n<=2) return n;
 
     //rec case
     //lookup
@@ -61,9 +65,9 @@ ll friends_pairing_topDown(ll n){
 ll friends_pairing_bottomUp(ll n,ll dp[]){
     //base case
     if(n<=2) return n;
-
-    f(i,3,n+1){
-        dp[i]=dp[i-1]+(i-1)*dp[i-2];
+    f(i,0,n+1){
+        if(i<=2) dp[i]=i;
+        else dp[i]=dp[i-1]+(i-1)*dp[i-2];
     }
     
     return dp[n];
@@ -101,7 +105,9 @@ int main(){
 
     ll n;cin>>n;
     ll dp[n+1]={0};
-    cout<<friends_pairing_topDown(n,dp)<<endl;
+    // cout<<friends_pairing_topDown(n,dp)<<endl;
+    // cout<<friends_pairing_bottomUp(n,dp)<<endl;
+    cout<<friends_pairing_iterative(n)<<endl;
 
     return 0;
 }
