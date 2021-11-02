@@ -1,4 +1,6 @@
 /*
+    Problem: https://practice.geeksforgeeks.org/problems/equalize-the-towers2804/1/?page=1&category[]=Binary%20Search&query=page1category[]Binary%20Search#
+    
     Explanation:
     Its a slight variation of binary search, so we are not able to figure out directly how to use binary search.
 
