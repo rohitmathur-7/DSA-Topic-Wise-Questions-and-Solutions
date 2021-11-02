@@ -3,11 +3,19 @@
     Its a slight variation of binary search, so we are not able to figure out directly how to use binary search.
 
     So how we should think is something like this -
-
     
+    We will take low as 0 and high as the highest height in array + 1,
+    and then we will calculate the mid ,
+    now we will calculate the cost it will take to bring all the heights to mid,
+    and also we will calculate the cost it will take to bring all the heights to mid-1, and also to mid+1.
 
+    Now if the cost calculated from mid+1 is smaller than the cost from mid, then it means there exists atleast 1 height in range mid+1 to high which will give us a smaller answer than mid,so in this case we will make our low=mid+1,
 
+    Now if the cost calculated from mid-1 is smaller than the cost from mid, then it means there exists atleast 1 height in range low to mid-1 which will give us a smaller answer than mid,so in this case we will make our high=mid-1,
 
+    And finally if mid gives us a smaller answer than both mid+1 and mid-1,
+    then that is our Answer!
+    
 */
 
 
