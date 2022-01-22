@@ -96,7 +96,7 @@ void prime_sieve(ll *p){
 int main(){
    fast
    w(t){
-
+//
    }
      
    return 0;
